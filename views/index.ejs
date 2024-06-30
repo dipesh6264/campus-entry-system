@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Code Compiler</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+  
+    <div class="container">
+        <div id="mainContent">
+            <h1>Online Code Compiler</h1>
+            <form action="/run" method="post">
+                <label for="language">Select Language:</label>
+                <select name="language" id="language">
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                </select>
+                <br>
+                <label for="code">Enter your code:</label>
+                <textarea name="code" id="code" rows="10" cols="50"></textarea>
+                <br>
+                <label for="input">Enter input (optional):</label>
+                <textarea name="input" id="input" rows="5" cols="50"></textarea>
+                <br>
+            </form>
+            <button id="runCodeButton">Run Code</button>
+            <div id="output">
+                <h2>Output:</h2>
+                <pre id="outputContent"></pre>
+            </div>
+        </div>
+        <div id="active">
+            <div id="userListTitle">Active Users</div>
+            <div id="userList">
+                <!-- Active user list will be displayed here -->
+            </div>
+            <div id="userListTitle">Chat</div>
+            <div id="chatBox">
+                <div id="chatMessages">
+                    <!-- Chat messages will be displayed here -->
+                </div>
+                <input type="text" id="chatInput" placeholder="Type a message...">
+                <button id="sendChatButton">Send</button>
+            </div>
+        </div>
+    </div>
+    <!-- Include WebSocket client -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/socket.js"></script>
+
+
+     <script>
+        // Handle code submission via AJAX
+         document.getElementById('runCodeButton').addEventListener('click', function() {
+            var language = document.getElementById('language').value;
+            var code = document.getElementById('code').value;
+            var input = document.getElementById('input').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/run', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('outputContent').innerText = xhr.responseText;
+                }
+            };
+            xhr.send(JSON.stringify({ language: language, code: code, input: input }));
+        });
+
+        
+    </script>
+</body>
+
+</html>
