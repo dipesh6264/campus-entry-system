@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.logo .bold {
+    font-weight: bold;
+    color:rgb(147, 46, 46);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color:rgb(147, 46, 46);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.hero {
+    /* margin-top: 80px; */
+    width: 100vw;
+    height: 100vh; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+   
+    background-color: rgba(0, 0, 0, 0.2); /* Black w/opacity/see-through */
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://news.iitgn.ac.in/wp/wp-content/uploads/2023/06/IITGN-campus.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+section.about {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#abouth {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#aboutp {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        font-size: x-large;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(251, 251, 251, 0.8);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    #abouth {
+        font-size: 1.5em;
+    }
+
+    #aboutp {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+   
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    #abouth {
+        font-size: 1.2em;
+    }
+
+    #aboutp {
+        font-size: 0.9em;
+    }
+}

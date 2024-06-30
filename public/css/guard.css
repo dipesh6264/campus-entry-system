@@ -1,0 +1,55 @@
+.container {
+    text-align: center;
+}
+
+.section {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#my-qr-reader {
+    width: 500px;
+
+    border: 2px solid black;
+    margin: auto;
+}
+
+#scan-result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: azure;
+}
+
+.invalid-user {
+    color: red;
+    font-weight: bold;
+}
+
+.verified-user {
+    color: green;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(251, 248, 248);
+    color: azure;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: black;
+}

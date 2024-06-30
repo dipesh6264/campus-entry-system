@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/index.css">
+
+  <style>
+   
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+      border-radius: 8px;
+      
+    }
+
+    .form-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://news.iitgn.ac.in/wp/wp-content/uploads/2023/06/IITGN-campus.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    #otp-section {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <span class="bold">E</span>-Gate
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/student">Students</a></li>
+        <li><a href="/visitor">Visitor</a></li>
+        <li><a href="/cabdriver">Cab Driver</a></li> 
+        <li><a href="/guard">Guard</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    
+      </div>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h1>Student Information</h1>
+    <form id="student-form" action="/student" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      <label for="rollNo">Roll No:</label>
+      <input type="text" id="rollNo" name="rollNo" required><br>
+      <label for="mobileNo">Mobile No:</label>
+      <input type="text" id="mobileNo" name="mobileNo" required><br>
+      <label for="emailId">Email ID:</label>
+      <input type="email" id="emailId" name="emailId" required>
+      <button type="button" id="verify-email-button">Verify Email</button><br>
+      <div id="otp-section" style="display: none;">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp"><br>
+      </div>
+      <button type="submit" id="submit-button" disabled>Generate QR Code</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('verify-email-button').addEventListener('click', async () => {
+      const emailId = document.getElementById('emailId').value;
+      if (!emailId) {
+        alert('Please enter an email ID.');
+        return;
+      }
+
+      // Check if the email ID ends with "@iitgn.ac.in"
+    if (!emailId.endsWith('@iitgn.ac.in')) {
+    alert('Email ID should end with @iitgn.ac.in');
+    return;
+  }
+
+      document.getElementById('otp-section').style.display = 'block';
+
+      const response = await fetch('/otp/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ emailId })
+      });
+    //   if (response.ok) {
+    //     alert('OTP sent to your email.');
+    //     document.getElementById('verify-email-button').disabled = true;
+    //     document.getElementById('submit-button').disabled = false;
+    //   } else {
+    //     alert('Error sending OTP.');
+    //   }
+      document.getElementById('verify-email-button').disabled = true;
+      document.getElementById('submit-button').disabled = false;
+    });
+  </script>
+   <script src="js/index.js"></script>
+</body>
+</html>
