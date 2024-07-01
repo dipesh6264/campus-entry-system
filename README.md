@@ -75,12 +75,17 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 1. Go to the visitor registration page: `/visitor`
 2. Fill in your details and click **Verify Email**.
 3. Enter the OTP sent to your email and click **Generate QR Code**.
+<img width="700" alt="chat2" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/43629824-679d-48f2-ab51-c429cd856dce">
+
+
 
 ### Guard Login and Actions
 
 1. Go to the guard login page: `/guard`
 2. Enter your username and password and click **Login**.
 3. After logging in, you can scan QR codes or view scan logs.
+<img width="700" alt="chat2" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/09313172-a1b7-439f-8bba-7c58f652d508">
+
 
 ### Cab Driver QR Code Generation
 
