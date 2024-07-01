@@ -10,7 +10,7 @@ Allows students to register by providing their name, roll number, mobile number,
 
 ### 2. Visitor Module
 
-Visitors can register by providing their details and the person they are visiting. An OTP is sent to their email for verification. Once verified, a QR code is generated for entry.
+Visitors can register by providing their details and the person they are visiting. An OTP is sent to person they are visiting email for verification. Once verified, a QR code is generated for entry.
 
 ### 3. Guard Module
 
@@ -74,7 +74,7 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 
 1. Go to the visitor registration page: `/visitor`
 2. Fill in your details and click **Verify Email**.
-3. Enter the OTP sent to your email and click **Generate QR Code**.
+3. Enter the OTP sent to person you are visiting email and click **Generate QR Code**.
 <img width="700" alt="chat2" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/43629824-679d-48f2-ab51-c429cd856dce">
 
 
@@ -96,6 +96,7 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 ### Cab Driver QR Code Generation
 
 Cab drivers should visit Gate 1 at IIT Gandhinagar. The guard will verify the driver's information and generate a QR code, which can be used for subsequent entries.
+<img width="700" alt="image" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/821cfd29-c535-4460-9d10-e8a746e7f465">
 
 ## Contributing
 
