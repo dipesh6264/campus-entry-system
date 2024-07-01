@@ -67,6 +67,9 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 3. Enter the OTP sent to your email and click **Generate QR Code**.
 
 <img width="700" alt="chat2" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/168cd89b-90b6-4f9d-8ba3-65c92a679b99">
+<img width="700" alt="chat2" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/3273acd8-dbc9-4731-99ae-f19ec3af2d99">
+
+
 
 
 
