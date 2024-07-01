@@ -86,6 +86,8 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 3. After logging in, you can scan QR codes or view scan logs.
 <img width="700" alt="chat2" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/09313172-a1b7-439f-8bba-7c58f652d508">
 
+<img width="700" alt="image" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/ed2a0926-a7d3-4b34-8364-00707713fba3">
+
 
 ### Cab Driver QR Code Generation
 
