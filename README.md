@@ -31,11 +31,11 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/e-gate-system.git
+    git clone https://github.com/dipesh6262/campus-entry-system.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd e-gate-system
+    cd campus-entry-system
     ```
 3. Install dependencies:
     ```sh
@@ -43,16 +43,18 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
     ```
 4. Set up the environment variables in a `.env` file:
     ```plaintext
-    DB_URI=mongodb://localhost:27017/egate
-    PORT=3000
-    SECRET_KEY=your_secret_key
-    EMAIL_SERVICE=your_email_service
-    EMAIL_USER=your_email@example.com
-    EMAIL_PASS=your_email_password
+   MONGODB_URI=mongodb://localhost:27017/campus_entry_system
+   PORT=3000
+   EMAIL_HOST=smtp.gmail.com
+   EMAIL_PORT=587
+   EMAIL_USER=
+   EMAIL_PASS=
+   GUARD_NAME = guard
+   GUARD_PASSWORD = password
     ```
 5. Start the application:
     ```sh
-    npm start
+    node app.js
     ```
 
 ## Demonstration
