@@ -96,6 +96,7 @@ Cab drivers need to visit Gate 1 at IIT Gandhinagar. The guard will verify their
 ### Cab Driver QR Code Generation
 
 Cab drivers should visit Gate 1 at IIT Gandhinagar. The guard will verify the driver's information and generate a QR code, which can be used for subsequent entries.
+
 <img width="700" alt="image" src="https://github.com/dipesh6264/campus-entry-system/assets/134261406/821cfd29-c535-4460-9d10-e8a746e7f465">
 
 ## Contributing
